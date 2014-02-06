@@ -195,6 +195,8 @@ def create(path,
                 )
             else:
                 cmd.append('--distribute')
+        if not distribute:
+           cmd.append('--setuptools')
 
         if python is not None and python.strip() != '':
             if not os.access(python, os.X_OK):
